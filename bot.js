@@ -76,7 +76,7 @@ function respond() {
   } 
   else if(request.text && botODB.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Settle down first time caller, long time listener");
+    postMessage("WHOA CALLER. You can't say that on the air!");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
