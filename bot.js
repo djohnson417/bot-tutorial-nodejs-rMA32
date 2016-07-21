@@ -5,10 +5,9 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/tag/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/stats/i;  botDuck = /^\/duck/;
-      botRegexP = /^\/ea/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/web/; botRegexSh = /^\/shrug/; botRegexWk = /^\/login/; 
-      botcalc = /^\/cash/; botuserdata = /^\/pawl/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/yubnub/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -19,39 +18,39 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://thedynasty.football/tag/"+request.text.substring(5,20)+"/");
+    postMessage("http://daddyleagues.com/ma32/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://cdn1.sbnation.com/imported_assets/575713/sabanbirddooley.gif");
+    postMessage("https://i.imgur.com/B5BSVqH.png");
     this.res.end();
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://s-media-cache-ak0.pinimg.com/736x/28/07/e7/2807e7d83d79049ac5770c869e918fda.jpg");
+    postMessage("http://www.hackcollege.com/wp-content/uploads/2013/02/kno_advance.jpg");
     this.res.end();
   }
   else if(request.text && botRegexYub.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://cdn.images.express.co.uk/img/dynamic/78/590x/25n34kim-472287.jpg");
+    postMessage("http://www.quickmeme.com/img/9f/9f3720469d1ce6c2d20130ed0750935a394df80ffcddec6d16e091d95efea854.jpg");
     this.res.end();
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://i.imgur.com/zB6d6.gif");
+    postMessage("https://i.groupme.com/220x147.jpeg.a2dd2add32b14fff9e329535186d793c.large");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://thedynasty.football/statistics/");
+    postMessage("http://daddyleagues.com/ma32/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://www.easports.com/dynasty/");
+    postMessage("http://daddyleagues.com/ma32/players?name="+rep+"&position=all&team=all");
     this.res.end();
   }  
 
@@ -62,49 +61,31 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://thedynasty.football");
+    postMessage("http://www.reddit.com/r/maddenall32");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://www.gannett-cdn.com/-mm-/fc0160d61fd95df16f68d5d6f0d7d179dd9db7ad/c=113-0-2329-1666&r=x404&c=534x401/local/-/media/USATODAY/USATODAY/2014/05/16//1400214150000-c01-saban-c-13.jpg");
+    postMessage("¯\\_(ツ)_/¯");
     this.res.end();
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://thedynasty.football/wp-login.php?redirect_to=http%3A%2F%2Fthedynasty.football%2F");
+    postMessage("https://docs.google.com/spreadsheets/d/1kJqQWCq3RKiTrd4f71FFNKr-Y0ppJzjk0fSF0rP6Bto/edit?usp=sharing");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("How many times do I have to say it? OBJ. OBJ DAMNIT.*");
+    postMessage("OBJ*");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://media3.giphy.com/media/YCseTHF2I6CCA/giphy.gif");
     this.res.end();
-    
   
   
   }
-    else if(request.text && botcalc.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://cdn2.sbnation.com/imported_assets/703934/auburn_cash_cab.gif");
-    this.res.end();
-    
-  
-  
-  }
-      else if(request.text && botuserdata.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://assets.sbnation.com/assets/555956/Oh_My_Love_My_Darling_medium.gif");
-    this.res.end();
-    
-  
-  
-  }
-  
   else {
     console.log("don't care");
     this.res.writeHead(200);
