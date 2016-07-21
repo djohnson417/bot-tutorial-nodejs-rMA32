@@ -5,10 +5,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; 
-      botcalc = /^\/calc/; botuserdata = /^\/dir/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/tag/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/stats/i;  botDuck = /^\/duck/;
+      botRegexP = /^\/ea/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/web/; botRegexSh = /^\/shrug/; botRegexWk = /^\/login/; 
+      botcalc = /^\/cash/; botuserdata = /^\/pawl/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -19,12 +19,12 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/ma32/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://thedynasty.football/tag/"+request.text.substring(5,20)+"/");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://i.imgur.com/yaWDBC8.gif");
+    postMessage("http://cdn1.sbnation.com/imported_assets/575713/sabanbirddooley.gif");
     this.res.end();
   } 
   else if(request.text && botRegexAd.test(request.text)) {
@@ -39,19 +39,19 @@ function respond() {
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://media.tumblr.com/tumblr_luh2heQsnH1qfvsmh.pngarge");
+    postMessage("http://i.imgur.com/zB6d6.gif");
     this.res.end();
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/ma32/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://thedynasty.football/statistics/");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/ma32/players?name="+rep+"&position=all&team=all");
+    postMessage("http://www.easports.com/dynasty/");
     this.res.end();
   }  
 
@@ -62,7 +62,7 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/dxfl/");
+    postMessage("https://thedynasty.football");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
@@ -72,7 +72,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1kJqQWCq3RKiTrd4f71FFNKr-Y0ppJzjk0fSF0rP6Bto/edit?usp=sharing");
+    postMessage("http://thedynasty.football/wp-login.php?redirect_to=http%3A%2F%2Fthedynasty.football%2F");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -90,7 +90,7 @@ function respond() {
   }
     else if(request.text && botcalc.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/13awo_uwqh9IpY4pj0QCIpQoeOx6jyThYAquMCsC3zA4/edit?usp=drive_web");
+    postMessage("http://cdn2.sbnation.com/imported_assets/703934/auburn_cash_cab.gif");
     this.res.end();
     
   
@@ -98,7 +98,7 @@ function respond() {
   }
       else if(request.text && botuserdata.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1H-xRimUvGD4uPn5JIjicJQ1D7X0I3GBM2lt2w1lwq2g/edit#gid=0");
+    postMessage("http://assets.sbnation.com/assets/555956/Oh_My_Love_My_Darling_medium.gif");
     this.res.end();
     
   
