@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/tag/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/web/
-      botRegexAd=/^\/update/;botRegexGTA = /^\/pawl/; botRegexSC = /^\/ea/i; botODB = /(.*\s+)(.*fuck)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexAd=/^\/update/;botRegexGTA = /^\/pawl/; botRegexSC = /^\/ea/i; botLTAC = /(.*pawl)/i; botODB = /(.*fuck)/i; botDuck = /^\/duck/;
       botRegexP = /^\/login/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/stats/; botRegexSh = /^\/shrug/; botRegexFu = /^\/fu/; botRegexPl = /^\/pawl/; botRegexCc = /^\/cash/; botRegexWk = /^\/upset/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -77,6 +77,11 @@ function respond() {
   else if(request.text && botODB.test(request.text)) {
     this.res.writeHead(200);
     postMessage("WHOA CALLER. You can't say that on the air!");
+    this.res.end();
+  } 
+    else if(request.text && botLTAC.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("Hello, you're on the air.");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
