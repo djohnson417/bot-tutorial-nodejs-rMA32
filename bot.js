@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/tag/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/web/
-      botRegexAd=/^\/update/;botRegexGTA = /^\/pawl/; botRegexSC = /^\/ea/i; botUPD = /(.*update)/i; botLTAC = /(.*pawl)/i; botODB = /(.*fuck)/i; botDuck = /^\/duck/;
+      botRegexAd=/^\/update/;botRegexGTA = /^\/pawl/; botRegexSC = /^\/ea/i; botUPD = /(.*auburn)/i; botLTAC = /(.*pawl)/i; botODB = /(.*fuck)/i; botDuck = /^\/duck/;
       botRegexP = /^\/login/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/stats/; botRegexSh = /^\/shrug/; botRegexFu = /^\/fu/; botRegexPl = /^\/pawl/; botRegexCc = /^\/cash/; botRegexWk = /^\/upset/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
@@ -81,7 +81,7 @@ function respond() {
   } 
     else if(request.text && botUPD.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("Dejuan from Birmingham, you're on the air.");
+    postMessage("*Barner");
     this.res.end();
   } 
     else if(request.text && botLTAC.test(request.text)) {
