@@ -19,7 +19,7 @@ function respond() {
   } 
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/ma32/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/dxfl/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
@@ -44,14 +44,14 @@ function respond() {
   } 
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/ma32/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/dxfl/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/ma32/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/dxfl/players?name="+rep+"&position=all&team=all");
     this.res.end();
   }  
 
@@ -72,7 +72,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1kJqQWCq3RKiTrd4f71FFNKr-Y0ppJzjk0fSF0rP6Bto/edit?usp=sharing");
+    postMessage("");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -90,7 +90,7 @@ function respond() {
   }
     else if(request.text && botcalc.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/13awo_uwqh9IpY4pj0QCIpQoeOx6jyThYAquMCsC3zA4/edit?usp=drive_web");
+    postMessage("");
     this.res.end();
     
   
