@@ -7,8 +7,8 @@ function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; 
-      botcalc = /^\/calc/; botuserdata = /^\/dxfl/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
+      botcalc = /^\/calc/; botuserdata = /^\/dxfl/; botviolation = /^\/flag/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -90,7 +90,7 @@ function respond() {
   }
     else if(request.text && botcalc.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("https://drive.google.com/open?id=10w9kov0K3VVLZm_--sZmn6_FuD1LyqbFcTKTOkH33do");
     this.res.end();
     
   
@@ -99,6 +99,14 @@ function respond() {
       else if(request.text && botuserdata.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://docs.google.com/spreadsheets/d/1H-xRimUvGD4uPn5JIjicJQ1D7X0I3GBM2lt2w1lwq2g/edit#gid=0");
+    this.res.end();
+    
+  
+  
+  }
+        else if(request.text && botviolation.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://drive.google.com/open?id=1aUKYKlmpAMMYrf59AndvZz0MkKLeLdN07u9ZN_rNLow");
     this.res.end();
     
   
