@@ -72,7 +72,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("https://drive.google.com/open?id=10w9kov0K3VVLZm_--sZmn6_FuD1LyqbFcTKTOkH33do");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
