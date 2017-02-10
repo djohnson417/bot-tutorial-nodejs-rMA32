@@ -5,10 +5,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
-      botcalc = /^\/calc/; botuserdata = /^\/dxfl/; botviolation = /^\/flag/;
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i;  botDuck = /^\/duck/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
+      botcalc = /^\/calc/; botuserdata = /^\/reddit/; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -29,12 +29,12 @@ function respond() {
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://s-media-cache-ak0.pinimg.com/736x/28/07/e7/2807e7d83d79049ac5770c869e918fda.jpg");
+    postMessage("");
     this.res.end();
   }
   else if(request.text && botRegexYub.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://cdn.images.express.co.uk/img/dynamic/78/590x/25n34kim-472287.jpg");
+    postMessage("");
     this.res.end();
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
@@ -72,7 +72,7 @@ function respond() {
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://drive.google.com/open?id=10w9kov0K3VVLZm_--sZmn6_FuD1LyqbFcTKTOkH33do");
+    postMessage("https://www.reddit.com/r/MaddenGMs/comments/5q2h1j/house_rules_for_the_league/");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -90,7 +90,7 @@ function respond() {
   }
     else if(request.text && botcalc.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://drive.google.com/open?id=10w9kov0K3VVLZm_--sZmn6_FuD1LyqbFcTKTOkH33do");
+    postMessage("https://www.reddit.com/r/Madden/comments/5qkjuo/nate_doggs_trade_value_calculator_version_20/");
     this.res.end();
     
   
@@ -98,7 +98,7 @@ function respond() {
   }
       else if(request.text && botuserdata.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1H-xRimUvGD4uPn5JIjicJQ1D7X0I3GBM2lt2w1lwq2g/edit#gid=0");
+    postMessage("https://www.reddit.com/r/MaddenGMs/");
     this.res.end();
     
   
