@@ -5,10 +5,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i;  botDuck = /^\/duck/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
-      botcalc = /^\/calc/; botuserdata = /^\/reddit/; 
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/reddit/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
+      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -29,12 +29,12 @@ function respond() {
   } 
   else if(request.text && botRegexAd.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("https://s-media-cache-ak0.pinimg.com/736x/28/07/e7/2807e7d83d79049ac5770c869e918fda.jpg");
     this.res.end();
   }
   else if(request.text && botRegexYub.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("http://cdn.images.express.co.uk/img/dynamic/78/590x/25n34kim-472287.jpg");
     this.res.end();
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
@@ -62,7 +62,7 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.daddyleagues.com/madgms/");
+    postMessage("https://www.reddit.com/maddengms/");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
@@ -77,7 +77,7 @@ function respond() {
   } 
   else if(request.text && botODB.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("How many times do I have to say it? OBJ. OBJ DAMNIT.*");
+    postMessage("");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
@@ -98,7 +98,7 @@ function respond() {
   }
       else if(request.text && botuserdata.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.reddit.com/r/MaddenGMs/");
+    postMessage("https://www.daddyleagues.com/madgms/coaches");
     this.res.end();
     
   
