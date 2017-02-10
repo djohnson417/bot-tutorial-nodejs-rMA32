@@ -5,8 +5,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i; botRegexSC = /^\/SDL/i; 
-      botRegexP = /^\/PDL/i; botRegexSb = /^\/reddit/; botRegexSh = /^\/rules/; 
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
+      botcalc = /^\/calc/; botuserdata = /^\/dxfl/; botviolation = /^\/flag/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -60,17 +62,17 @@ function respond() {
   } 
   else if(request.text && botRegexSb.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.reddit.com/r/MaddenGMs/");
+    postMessage("https://www.daddyleagues.com/madgms/");
     this.res.end();
   } 
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://www.reddit.com/r/MaddenGMs/comments/5q2h1j/house_rules_for_the_league/");
+    postMessage("http://www.gannett-cdn.com/-mm-/fc0160d61fd95df16f68d5d6f0d7d179dd9db7ad/c=113-0-2329-1666&r=x404&c=534x401/local/-/media/USATODAY/USATODAY/2014/05/16//1400214150000-c01-saban-c-13.jpg");
     this.res.end();
   } 
   else if(request.text && botRegexWk.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1kJqQWCq3RKiTrd4f71FFNKr-Y0ppJzjk0fSF0rP6Bto/edit?usp=sharing");
+    postMessage("https://drive.google.com/open?id=10w9kov0K3VVLZm_--sZmn6_FuD1LyqbFcTKTOkH33do");
     this.res.end();
   } 
   else if(request.text && botODB.test(request.text)) {
@@ -88,7 +90,7 @@ function respond() {
   }
     else if(request.text && botcalc.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/13awo_uwqh9IpY4pj0QCIpQoeOx6jyThYAquMCsC3zA4/edit?usp=drive_web");
+    postMessage("https://drive.google.com/open?id=10w9kov0K3VVLZm_--sZmn6_FuD1LyqbFcTKTOkH33do");
     this.res.end();
     
   
@@ -97,6 +99,14 @@ function respond() {
       else if(request.text && botuserdata.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://docs.google.com/spreadsheets/d/1H-xRimUvGD4uPn5JIjicJQ1D7X0I3GBM2lt2w1lwq2g/edit#gid=0");
+    this.res.end();
+    
+  
+  
+  }
+        else if(request.text && botviolation.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://drive.google.com/open?id=1aUKYKlmpAMMYrf59AndvZz0MkKLeLdN07u9ZN_rNLow");
     this.res.end();
     
   
