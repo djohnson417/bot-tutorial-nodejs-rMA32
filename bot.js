@@ -8,7 +8,7 @@ function respond() {
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*da bears)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/reddit/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
-      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/; 
+      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/; botgamerhuddle = /^\/gh/;
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -107,6 +107,14 @@ function respond() {
         else if(request.text && botviolation.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://drive.google.com/open?id=1aUKYKlmpAMMYrf59AndvZz0MkKLeLdN07u9ZN_rNLow");
+    this.res.end();
+    
+  
+  
+  }
+          else if(request.text && botgamerhuddle.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.gamerhuddle.com/league/madden-gms");
     this.res.end();
     
   
