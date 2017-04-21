@@ -6,9 +6,9 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
-      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
+      botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*da bears)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/reddit/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
-      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/;
+      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -77,7 +77,7 @@ function respond() {
   } 
   else if(request.text && botODB.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("");
+    postMessage("https://media.tenor.co/images/42991654ff54edf5664027f2b38500d4/tenor.gif");
     this.res.end();
   } 
   else if(request.text && botDuck.test(request.text)) {
