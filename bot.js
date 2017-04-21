@@ -92,6 +92,13 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://www.reddit.com/r/Madden/comments/5qkjuo/nate_doggs_trade_value_calculator_version_20/");
     this.res.end();
+      
+  
+   }
+    else if(request.text && botgamerhuddle.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://www.gamerhuddle.com/league/madden-gms/");
+    this.res.end();     
     
   
   
@@ -109,13 +116,6 @@ function respond() {
     postMessage("https://drive.google.com/open?id=1aUKYKlmpAMMYrf59AndvZz0MkKLeLdN07u9ZN_rNLow");
     this.res.end();
     
-  
-  
-  }
-          else if(request.text && botgamerhuddle.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.gamerhuddle.com/league/madden-gms");
-    this.res.end();
     
   
   
