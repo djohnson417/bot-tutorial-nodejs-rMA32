@@ -5,10 +5,10 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexYub = /^\/dearleader/
+      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/gh/;botRegexYub = /^\/dearleader/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/upset/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*da bears)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/reddit/; botRegexSh = /^\/shrug/; botRegexWk = /^\/rules/; 
-      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/; botgamerhuddle = /^\/gh/;
+      botcalc = /^\/calc/; botuserdata = /^\/owners/; botviolation = /^\/flag/; 
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
                 ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
@@ -24,7 +24,7 @@ function respond() {
   } 
   else if(request.text && botRegexSalt.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://i.imgur.com/yaWDBC8.gif");
+    postMessage("https://www.gamerhuddle.com/league/madden-gms/");
     this.res.end();
   } 
   else if(request.text && botRegexAd.test(request.text)) {
@@ -93,15 +93,7 @@ function respond() {
     postMessage("https://www.reddit.com/r/Madden/comments/5qkjuo/nate_doggs_trade_value_calculator_version_20/");
     this.res.end();
       
-  
-   }
-    else if(request.text && botgamerhuddle.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.gamerhuddle.com/league/madden-gms/");
-    this.res.end();     
-    
-  
-  
+      
   }
       else if(request.text && botuserdata.test(request.text)) {
     this.res.writeHead(200);
